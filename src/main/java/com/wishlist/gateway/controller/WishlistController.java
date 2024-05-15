@@ -39,7 +39,7 @@ public class WishlistController {
                     content = { @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                             schema = @Schema(implementation = DefaultResponse.class))})
     })
-    @PostMapping("/wishlist")
+    @PostMapping("/wishlists")
     public AddWishlistResponse adicionarNovaWishlist(
             @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "Dados para nova wishlist.", required = true,
                     content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
@@ -60,7 +60,7 @@ public class WishlistController {
                     content = { @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                             schema = @Schema(implementation = DefaultResponse.class))})
     })
-    @PostMapping("/wishlist/{wishListId}/products")
+    @PostMapping("/wishlists/{wishListId}/products")
     public AddProductWishlistResponse adicionarProdutoNaWishlist(
             @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "Dados para um produto a uma wishlist.", required = true,
                     content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
@@ -82,7 +82,7 @@ public class WishlistController {
                     content = { @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                             schema = @Schema(implementation = DefaultResponse.class))})
     })
-    @GetMapping("/wishlist/{wishListId}/products")
+    @GetMapping("/wishlists/{wishListId}/products")
     public FindProductsByWishlistResponse consultaProdutosPorWishlist(@Parameter(description = "Id da wishlist.") @PathVariable String wishListId) {
         return findProductFromWishlistInput.findProductsByWishlist(wishListId);
     }
@@ -96,7 +96,7 @@ public class WishlistController {
                     content = { @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                             schema = @Schema(implementation = DefaultResponse.class))})
     })
-    @GetMapping("/wishlist/{wishlistId}/products/{productId}")
+    @GetMapping("/wishlists/{wishlistId}/products/{productId}")
     public ProductExistsMyWishlistResponse verificaProdutosExisteNaWishlist(@Parameter(description = "Id do produto.") @PathVariable String productId,
                                                                             @Parameter(description = "Id da wishlist.") @PathVariable String wishlistId) {
         return checkProductExistsMyWishlistInput.checkProductExistsMyWishlist(wishlistId, productId);
@@ -114,7 +114,7 @@ public class WishlistController {
                     content = { @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                             schema = @Schema(implementation = DefaultResponse.class))})
     })
-    @GetMapping("/wishlist/{wishlistId}")
+    @GetMapping("/wishlists/{wishlistId}")
     public FindWishlistResponse consultaWishlistPorId(@Parameter(description = "Id da wishlist.") @PathVariable String wishlistId) {
         return findWishlistByIdInput.findById(wishlistId);
     }
@@ -129,7 +129,7 @@ public class WishlistController {
                     content = { @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                             schema = @Schema(implementation = DefaultResponse.class))})
     })
-    @DeleteMapping("/wishlist/{wishListId}/products/{productId}")
+    @DeleteMapping("/wishlists/{wishListId}/products/{productId}")
     public void removerProdutoDaWishlist(@Parameter(description = "Id da wishlist.") @PathVariable String wishListId,
                                          @Parameter(description = "Id do produto.") @PathVariable String productId){
         removeProductFromWishlistInput.removeProductFromWishlistById(wishListId, productId);

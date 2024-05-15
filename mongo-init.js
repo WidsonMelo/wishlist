@@ -26,7 +26,10 @@ db.product.insertMany([
     {_id:"19" , "name": "Fitas de Glicemia Accu-check Active 50U" },
     {_id:"20" , "name": "Tinta Geral TekBond Super Color Preto Fosco Metal" },
     {_id:"21" , "name": "Capacete NoRisk 58 Blade 3" },
-    {_id:"22" , "name": "BoardGame 7Wonders 2ª Edição" }
+    {_id:"22" , "name": "BoardGame 7Wonders 2ª Edição" },
+    {_id:"23" , "name": "Impressora Canon MG2410" },
+    {_id:"24" , "name": "Organizador de Gavetas F1" },
+    {_id:"25" , "name": "Forno Microondas Eletrolux" }
 ]);
 
 db.createCollection('client');
